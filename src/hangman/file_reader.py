@@ -2,11 +2,10 @@ class FileReader:
     """A class designed to read a file."""
 
     @staticmethod
-    def get_words_from_file(cls, path: str) -> list[str]:
+    def get_words_from_file(path: str) -> list[str]:
         """
         Reads words from file and returns them as a list.
 
-        :param cls: reference to an object of the FileReader class
         :param path: The path to the file with words.
         :return:     The list of words.
         :raises      FileNotFoundError: If the file is not found.

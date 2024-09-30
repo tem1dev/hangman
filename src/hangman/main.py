@@ -1,8 +1,9 @@
-from src.hangman.hangman import Hangman
+from .game import Game
+
 
 def main() -> None:
-    hangman = Hangman()
-    hangman.start()
+    game: Game = Game()
+    game.start()
 
 
 if __name__ == "__main__":

@@ -1,11 +1,11 @@
-from src.hangman.file_reader import FileReader
-from src.hangman.random_word import RandomWord
-from src.hangman.player_input import PlayerInput
-from src.hangman.renderer import Renderer
-from src.hangman.state import State
+from hangman.file_management.file_reader import FileReader
+from hangman.game_state.state import State
+from hangman.user_input.player_input import PlayerInput
+from hangman.display.renderer import Renderer
+from hangman.word_selection.random_word import RandomWord
 
 
-class Hangman:
+class Game:
     """The main class that runs the Hangman game."""
     WORDS_FILE_PATH: str = "data/ru_words.txt"
 
@@ -28,13 +28,13 @@ class Hangman:
         Notes:
             The path to the file is set by the WORDS_FILE_PATH variable.
         """
-        self.__attempts = 0
-        self.__used_letters = set()
-        self.__player_word = None
-        self.__state = State()
-        self.__player_input = PlayerInput()
-        self.__renderer = Renderer()
-        self.__random_word = RandomWord(FileReader.get_words_from_file(self.WORDS_FILE_PATH))
+        self.__attempts: int = 0
+        self.__used_letters: list[str] = []
+        self.__player_word: str | None = None
+        self.__state: State = State()
+        self.__player_input: PlayerInput = PlayerInput()
+        self.__renderer: Renderer = Renderer()
+        self.__random_word: RandomWord = RandomWord(FileReader.get_words_from_file(self.WORDS_FILE_PATH))
 
     def start(self) -> None:
         """Launches the main game loop."""
@@ -69,11 +69,11 @@ class Hangman:
                 user_input = self.__player_input.get_user_input()
                 if user_input in secret_word and user_input not in self.__used_letters:
                     self.__update_player_word(secret_word, user_input)
-                    self.__used_letters.add(user_input)
+                    self.__used_letters.append(user_input)
                 elif user_input in self.__used_letters:
                     print("Буква уже использовалась. Попробуйте снова.")
                 else:
-                    self.__used_letters.add(user_input)
+                    self.__used_letters.append(user_input)
                     self.__attempts += 1
 
     def __update_player_word(self, secret_word: str, user_input: str) -> None:

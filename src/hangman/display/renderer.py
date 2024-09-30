@@ -2,7 +2,7 @@ class Renderer:
     """Responsible for rendering information about the game in the console.
 
     Attributes:
-        __CONSOLE_HANGMAN_PICTURES: List of sprites of various hangman states.
+        __CONSOLE_HANGMAN_PICTURES: List of sprites of various hangman_game states.
     """
     __CONSOLE_HANGMAN_PICTURES: list[str] = [
         """ 
@@ -70,7 +70,7 @@ class Renderer:
 
     def get_sprite_for_hangman(self, attempts: int) -> str:
         """
-        Returns a specific hangman's sprite depending on the player's condition
+        Returns a specific hangman_game's sprite depending on the player's condition
         (number of attempts).
 
         :param attempts: The number of attempts made by the player

@@ -11,7 +11,7 @@ class PlayerInput:
         """
         print(text)
         while not (self.is_valid_input(user_input := input())):
-            print("Некорретный ввод. Попробуйте снова.")
+            print("Некорректный ввод. Попробуйте снова.")
 
         return user_input
 
@@ -22,4 +22,4 @@ class PlayerInput:
         :param user_input: Player input from the keyboard.
         :return: True or False depending on the validity of the input.
         """
-        return len(user_input) == self.VALID_INPUT_LENGTH and user_input in self.VALID_LETTERS
+        return len(user_input) == self.VALID_INPUT_LENGTH and user_input.lower() in self.VALID_LETTERS

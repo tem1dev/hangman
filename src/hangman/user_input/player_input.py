@@ -13,7 +13,7 @@ class PlayerInput:
         while not (self.is_valid_input(user_input := input())):
             print("Некорректный ввод. Попробуйте снова.")
 
-        return user_input
+        return user_input.lower()
 
     def is_valid_input(self, user_input: str) -> bool:
         """

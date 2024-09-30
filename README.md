@@ -1,4 +1,7 @@
-![Логотип игры](https://github.com/fearux/hangman_game/raw/main/docs/logo.png)
+<p align="right">
+  <img src="https://github.com/fearux/hangman_game/raw/main/docs/logo.png" alt="Логотип игры" />
+</p>
+
 
 ## Виселица
 ### Description
@@ -9,6 +12,7 @@
 - Рендеринг каждого шага, демонстрация состояния игры
 - Набор слов читается и обрабатывается из файла
 
+### Interface
 ![Интерфейс игры](https://github.com/fearux/hangman_game/raw/main/docs/hangman.png)
 
 ### Installation

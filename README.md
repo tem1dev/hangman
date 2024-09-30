@@ -1,7 +1,6 @@
-<p align="right">
+<p align="center">
   <img src="https://github.com/fearux/hangman_game/raw/main/docs/logo.png" alt="Логотип игры" />
 </p>
-
 
 ## Виселица
 ### Description

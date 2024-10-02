@@ -25,7 +25,6 @@ class Game:
 
     def start(self) -> None:
         """Launches the main game loop."""
-        self._input_handler.set_renderer(self._renderer)
         self._renderer.display_game_options()
         player_input: str = self._input_handler.get_player_input()
 

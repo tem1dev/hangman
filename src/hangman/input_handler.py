@@ -3,11 +3,8 @@ from hangman.renderer import Renderer
 
 class InputHandler:
 
-    def __init__(self):
-        self._valid_letters = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя"
-        self._renderer = None
-
-    def set_renderer(self, renderer: Renderer) -> None:
+    def __init__(self, renderer: Renderer, valid_letters: str):
+        self._valid_letters = valid_letters
         self._renderer = renderer
 
     def get_player_input(self) -> str:

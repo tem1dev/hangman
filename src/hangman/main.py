@@ -3,13 +3,19 @@ from hangman.state import State
 from hangman.renderer import Renderer
 from hangman.word_manager import WordManager
 from hangman.input_handler import InputHandler
-from typing import Final
-
-PATH: Final[str] = "data/ru_words.txt"
 
 
 def main() -> None:
-    game = Game(State(), Renderer(), WordManager(PATH), InputHandler())
+    path: str = "data/ru_words.txt"
+    lose_state: int = 6
+    valid_letters: str = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя"
+    renderer = Renderer()
+    game = Game(
+        State(lose_state),
+        renderer,
+        WordManager(path),
+        InputHandler(renderer, valid_letters),
+    )
     game.start()
 
 

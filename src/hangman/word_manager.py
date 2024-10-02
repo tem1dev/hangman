@@ -15,8 +15,6 @@ class WordManager:
             return words
         except FileNotFoundError:
             raise FileNotFoundError(f"File {self._path_to_file} not found")
-        except Exception as e:
-            raise RuntimeError(f"An error occurred {e}")
 
     def get_random_word(self, words: list[str]) -> str:
         """Returns random word from list of words"""

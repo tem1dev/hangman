@@ -17,11 +17,11 @@
 ### Installation
 1. Склонировать репозиторий
 ```bash
-git clone https://github.com/fearux/hangman_game.git
+git clone https://github.com/fearux/hangman.git
 ```
 2.  Перейти в основню директорию проекта
 ```bash
-cd hangman_game/src
+cd hangman/src
 ```
 3. Убедитесь, что в директории есть файл *ru_words.txt*
 ```bash
